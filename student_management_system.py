@@ -18,7 +18,7 @@ def connect_to_db():
         cursor = db.cursor()
         
         # Step 2: Create the database if it doesn't exist
-        cursor.execute("CREATE DATABASE IF NOT EXISTS student_test")
+        cursor.execute("CREATE DATABASE IF NOT EXISTS student_database")
         
         # Step 3: Reconnect to MySQL server using the newly created database
         db.close()
@@ -26,12 +26,10 @@ def connect_to_db():
             host = "localhost",
             user = username,    # Replace with your actual user name
             password = password,  # Replace with your actual password
-            database = "student_test"  # Replace with your actual database name
+            database = "student_database"  # Replace with your actual database name
         )
         
         cursor = db.cursor()
-        
-        cursor.execute("CREATE DATABASE IF NOT EXISTS student_test")
     
         cursor.execute("""CREATE TABLE IF NOT EXISTS student (
                 Student_ID INTEGER PRIMARY KEY,
